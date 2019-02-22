@@ -1,7 +1,9 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
+    //构建版本
     compileSdkVersion rootProject.ext.android.compileSdkVersion
+    //默认的配置
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
@@ -22,9 +24,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api rootProject.ext.dependencies["appcompat-v7"]
-    api rootProject.ext.dependencies["design"]
-    testApi rootProject.ext.dependencies["junit"]
-    androidTestApi rootProject.ext.dependencies["test-runner"]
-    androidTestApi rootProject.ext.dependencies["espresso"]
+
+    implementation project(':common')
+    implementation project(':opencv-sdk')
 }
