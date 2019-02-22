@@ -1,1 +1,1 @@
-include ':app', ':opencv-sdk'
+include ':grayscale', ':opencv-sdk'
